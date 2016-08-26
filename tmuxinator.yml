@@ -1,0 +1,13 @@
+name: aem-workspace
+root: 6.1
+
+windows:
+  - 6.1:
+      layout: main-vertical
+      panes:
+        - crx-quickstart:
+          - cd crx-quickstart
+        - log-error:
+          - tail -100f crx-quickstart/logs/error.log
+        - log-access:
+          - tail -100f crx-quickstart/logs/access.log
