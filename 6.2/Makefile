@@ -2,7 +2,7 @@ clean:
 	rm -rf crx-quickstart snapshot
 
 start:
-	java -XX:MaxPermSize=256m -Xms1024M -jar `ls *.jar` -p 4502
+	java -Xms1024M -jar `ls *.jar` -p 4502
 
 snapshot:
 	mkdir -p snapshot

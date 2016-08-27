@@ -1,8 +1,11 @@
 tools:
-  gem install tmuxinator
+	gem install tmuxinator
+
+init:
+	rm -f ~/.tmuxinator/aem-workspace.yml
+	ln -s `pwd`/tmuxinator.yml ~/.tmuxinator/aem-workspace.yml
 
 tmux:
-	ln -s tmuxinator.yml ~/.tmuxinator/aem-workspace.yml
 	tmuxinator start aem-workspace
 
-.PHONY: tools tmux
+.PHONY: init tmux tools

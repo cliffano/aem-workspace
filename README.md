@@ -1,7 +1,8 @@
 AEM Workspace
 -------------
 
-TODO
+AEM Workspace is a simple workspace area for running multiple versions of Adobe Experience Manager (AEM).
+It provides convenient build targets and also a Tmuxinator config.
 
 Install
 -------
@@ -21,6 +22,7 @@ Go to version directory:
     cd <version>
 
 Start AEM:
+
 First start will take a while due to AEM initialising crx-quickstart, wait until it opens AEM login page using the default browser.
 
     make start
@@ -30,6 +32,7 @@ Stop AEM:
     CTRL+C
 
 Take a snapshot:
+
 It's recommended to take a snapshot after the first start so you can restore a fresh AEM installation without going through the slow initialisation process.
 
     make snapshot
@@ -38,4 +41,7 @@ Restore from snapshot:
 
     make restore
 
-TODO: tmux setup
+Run tmux:
+
+    make tools init (once-off only)
+    make tmux
