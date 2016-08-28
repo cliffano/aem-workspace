@@ -23,9 +23,9 @@ Go to version directory:
 
 Start AEM:
 
-First start will take a while due to AEM initialising crx-quickstart, wait until it opens AEM login page using the default browser.
-
     make start
+
+First start will take a while due to AEM initialising crx-quickstart, wait until it opens AEM login page using the default browser.
 
 Stop AEM:
 
@@ -33,9 +33,9 @@ Stop AEM:
 
 Take a snapshot:
 
-It's recommended to take a snapshot after the first start so you can restore a fresh AEM installation without going through the slow initialisation process.
-
     make snapshot
+
+It's recommended to take a snapshot after the first start so you can restore a fresh AEM installation without going through the slow initialisation process.
 
 Restore from snapshot:
 
@@ -45,3 +45,7 @@ Run tmux:
 
     make tools init (once-off only)
     make tmux
+
+It gives you two windows on the right side which tails AEM's error and access logs, and a window on the left side as your main work area.
+
+[![tmux screenshot](https://raw.github.com/cliffano/aem-workspace/master/screenshots/tmux.jpg)](https://raw.github.com/cliffano/aem-workspace/master/screenshots/tmux.jpg)
