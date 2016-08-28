@@ -46,6 +46,7 @@ Run tmux:
     make tools init (once-off only)
     make tmux
 
-It gives you two windows on the right side which tails AEM's error and access logs, and a window on the left side as your main work area.
+It gives you three workspace windows, one for each AEM version (6.0, 6.1, and 6.2).
+Each window has two panes on the right side which tails AEM's error and access logs, and a pane on the left side as your main work area.
 
 [![tmux screenshot](https://raw.github.com/cliffano/aem-workspace/master/screenshots/tmux.jpg)](https://raw.github.com/cliffano/aem-workspace/master/screenshots/tmux.jpg)
