@@ -2,7 +2,7 @@ clean:
 	rm -rf crx-quickstart snapshot
 
 start:
-	java -Xms1024M -jar `ls *.jar` -p 4502
+	java -server -Xms1024M -jar `ls *.jar` -p 4502 -r author,nosamplecontent
 
 snapshot:
 	mkdir -p snapshot
