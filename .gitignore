@@ -3,3 +3,6 @@
 */license.properties
 */crx-quickstart
 */snapshot
+modules
+.librarian
+.tmp
