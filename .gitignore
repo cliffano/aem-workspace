@@ -1,3 +1,4 @@
 .DS_Store
-artifacts/
+artifacts/*.jar
+artifacts/*.properties
 workspaces/
