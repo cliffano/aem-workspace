@@ -2,7 +2,7 @@ AEM Workspace
 -------------
 
 AEM Workspace is a simple workspace area for running multiple versions of Adobe Experience Manager (AEM).
-It provides convenient build targets and also a Tmuxinator config.
+It provides convenient build targets to start AEM, to take a backup of the AEM installation, and to restore from that backup.
 
 Install
 -------
@@ -11,42 +11,26 @@ Clone AEM Workspace repo:
 
     git clone https://github.com/cliffano/aem-workspace
 
-Copy AEM jar and license files into the corresponding version directory.
-E.g. copy `AEM_6.1_Quickstart.jar` and its corresponding `license.properties` into `6.1` .
+Copy AEM jar and license files into `artifacts` directory.
+E.g. copy `AEM_6.4_Quickstart.jar` and its corresponding `license-aem64.properties` into `artifacts` directory.
 
 Usage
 -----
 
-Go to version directory:
+Start AEM 6.4 Author: (replace `aem64` with `aem63` or `aem62` accordingly)
 
-    cd <version>
+    make aem64-start-author
 
-Start AEM:
+First start will take a while due to AEM initialising `crx-quickstart` under `workspaces/aem64/author` directory.
 
-    make start
+Take a backup of AEM 6.4 Author `crx-quickstart`:
 
-First start will take a while due to AEM initialising crx-quickstart, wait until it opens AEM login page using the default browser.
+    make aem64-backup-author
 
-Stop AEM:
+This will copy the everything under `workspaces/aem64/author/crx-quickstart` into `workspaces/aem64/author/backup`.
 
-    CTRL+C
+It's recommended to take a backup after the first start so you can restore a fresh AEM installation without going through the slow initialisation process.
 
-Take a snapshot:
+Restore AEM 6.4 Author from backup:
 
-    make snapshot
-
-It's recommended to take a snapshot after the first start so you can restore a fresh AEM installation without going through the slow initialisation process.
-
-Restore from snapshot:
-
-    make restore
-
-Run tmux:
-
-    make tools init (once-off only)
-    make tmux
-
-It gives you three workspace windows, one for each AEM version (6.0, 6.1, and 6.2).
-Each window has two panes on the right side which tails AEM's error and access logs, and a pane on the left side as your main work area.
-
-[![tmux screenshot](https://raw.github.com/cliffano/aem-workspace/master/screenshots/tmux.jpg)](https://raw.github.com/cliffano/aem-workspace/master/screenshots/tmux.jpg)
+    make aem64-restore-author
