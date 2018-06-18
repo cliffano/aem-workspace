@@ -17,6 +17,10 @@ E.g. copy `AEM_6.4_Quickstart.jar` and its corresponding `license-aem64.properti
 Usage
 -----
 
+All build targets have the format:
+
+    make <aem62|aem63|aem64>-<start|backup|restore|clean>-<author|publish>
+
 Start AEM 6.4 Author: (replace `aem64` with `aem63` or `aem62` accordingly)
 
     make aem64-start-author
@@ -34,3 +38,7 @@ It's recommended to take a backup after the first start so you can restore a fre
 Restore AEM 6.4 Author from backup:
 
     make aem64-restore-author
+
+And clean up AEM 6.4 Author `crx-quickstart` and backup:
+
+    make aem64-clean-author
