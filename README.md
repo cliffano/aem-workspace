@@ -25,6 +25,14 @@ Start AEM 6.4 Author: (replace `aem64` with `aem63` or `aem62` accordingly)
 
     make aem64-start-author
 
+Each AEM version is allocated the following port numbers:
+
+| Version | Author Port | Publish Port |
+|---------|-------------|--------------|
+| AEM 6.2 | 45622       | 45623        |
+| AEM 6.3 | 45632       | 45633        |
+| AEM 6.4 | 45642       | 45643        |
+
 First start will take a while due to AEM initialising `crx-quickstart` under `workspaces/aem64/author` directory.
 
 Take a backup of AEM 6.4 Author `crx-quickstart`:
