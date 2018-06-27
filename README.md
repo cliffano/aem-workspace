@@ -1,3 +1,8 @@
+<img align="right" src="https://raw.github.com/cliffano/aem-workspace/master/avatar.jpg" alt="Avatar"/>
+
+[![Build Status](https://img.shields.io/travis/cliffano/aem-workspace.svg)](http://travis-ci.org/cliffano/aem-workspace)
+<br/>
+
 AEM Workspace
 -------------
 
