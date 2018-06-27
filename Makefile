@@ -1,3 +1,4 @@
+ci: clean aem62-init aem62-clean-author aem62-clean-publish aem63-init aem63-clean-author aem63-clean-publish aem64-init aem64-clean-author aem64-clean-publish
 define aem_init
   mkdir -p \
 	  workspaces/$(1)/author/backup \
@@ -127,4 +128,4 @@ aem64-restore-publish: aem64-init
 clean:
 	rm -rf workspace/
 
-.PHONY: clean
+.PHONY: ci clean
