@@ -24,7 +24,7 @@ Usage
 
 All build targets have the format:
 
-    make <aem62|aem63|aem64>-<start|backup|restore|clean>-<author|publish>
+    make <aem62|aem63|aem64|aem65>-<start|backup|restore|clean>-<author|publish>
 
 Start AEM 6.4 Author: (replace `aem64` with `aem63` or `aem62` accordingly)
 
@@ -37,6 +37,7 @@ Each AEM version is allocated the following port numbers:
 | AEM 6.2 | 45622       | 45623        |
 | AEM 6.3 | 45632       | 45633        |
 | AEM 6.4 | 45642       | 45643        |
+| AEM 6.5 | 45652       | 45653        |
 
 First start will take a while due to AEM initialising `crx-quickstart` under `workspaces/aem64/author` directory.
 

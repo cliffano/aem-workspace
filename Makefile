@@ -1,4 +1,4 @@
-ci: clean aem62-init aem62-clean-author aem62-clean-publish aem63-init aem63-clean-author aem63-clean-publish aem64-init aem64-clean-author aem64-clean-publish
+ci: clean aem62-init aem62-clean-author aem62-clean-publish aem63-init aem63-clean-author aem63-clean-publish aem64-init aem64-clean-author aem64-clean-publish aem65-init aem65-clean-author aem65-clean-publish
 define aem_init
   mkdir -p \
 	  workspaces/$(1)/author/backup \
@@ -124,6 +124,36 @@ aem64-restore-author: aem64-init
 
 aem64-restore-publish: aem64-init
 	$(call aem_restore,aem64,publish)
+
+aem65-init:
+	$(call aem_init,aem65)
+
+aem65-clean-author:
+	$(call aem_clean,aem65,author)
+
+aem65-clean-publish:
+	$(call aem_clean,aem65,publish)
+
+aem65-start-author: aem65-init
+	$(call aem_start,aem65,author,45652,AEM_6.5_Quickstart.jar,-nointeractive)
+
+aem65-start-publish: aem65-init
+	$(call aem_start,aem65,publish,45653,AEM_6.5_Quickstart.jar,-nointeractive)
+
+aem65-install-extras-author: aem65-init
+	$(call aem_install_extras,45652,1.3.3)
+
+aem65-backup-author: aem65-init
+	$(call aem_backup,aem65,author)
+
+aem65-backup-publish: aem65-init
+	$(call aem_backup,aem65,publish)
+
+aem65-restore-author: aem65-init
+	$(call aem_restore,aem65,author)
+
+aem65-restore-publish: aem65-init
+	$(call aem_restore,aem65,publish)
 
 clean:
 	rm -rf workspace/
