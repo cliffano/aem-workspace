@@ -35,6 +35,33 @@ define aem_restore
 	  cp -R backup/* crx-quickstart/
 endef
 
+aemsdk-init:
+	$(call aem_init,aemsdk)
+
+aemsdk-clean-author:
+	$(call aem_clean,aemsdk,author)
+
+aemsdk-clean-publish:
+	$(call aem_clean,aemsdk,publish)
+
+aemsdk-start-author: aemsdk-init
+	$(call aem_start,aemsdk,author,45662,AEM_SDK_Quickstart.jar,-nointeractive)
+
+aemsdk-start-publish: aemsdk-init
+	$(call aem_start,aemsdk,publish,45663,AEM_SDK_Quickstart.jar,-nointeractive)
+
+aemsdk-backup-author: aemsdk-init
+	$(call aem_backup,aemsdk,author)
+
+aemsdk-backup-publish: aemsdk-init
+	$(call aem_backup,aemsdk,publish)
+
+aemsdk-restore-author: aemsdk-init
+	$(call aem_restore,aemsdk,author)
+
+aemsdk-restore-publish: aemsdk-init
+	$(call aem_restore,aemsdk,publish)
+
 aem62-init:
 	$(call aem_init,aem62)
 
@@ -156,6 +183,6 @@ aem65-restore-publish: aem65-init
 	$(call aem_restore,aem65,publish)
 
 clean:
-	rm -rf workspace/
+	rm -rf workspaces/
 
 .PHONY: ci clean
